@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public protocol ListActionableItem: class {
     func createTask(with description: String) -> Observable<(ListActionableItem, ())>

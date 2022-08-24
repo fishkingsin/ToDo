@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public protocol RootActionableItem: class {
     func waitForLogin() -> Observable<(LoggedInActionableItem, ())>

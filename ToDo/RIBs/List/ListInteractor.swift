@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol RevertConfirmationDialogListener: class {
     func didSelectRevert(_ item: ItemViewModel)
@@ -48,14 +49,14 @@ final class ListInteractor: PresentableInteractor<ListPresentable>, ListInteract
     weak var listener: ListListener?
 
     private let service: ToDoServiceProtocol
-    private let config: Variable<Config>
+    private let config: BehaviorRelay<Config>
 
     private var incompleItems: [ItemViewModel] = []
     private var completedItems: [ItemViewModel] = []
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: ListPresentable, service: ToDoServiceProtocol, config: Variable<Config>) {
+    init(presenter: ListPresentable, service: ToDoServiceProtocol, config: BehaviorRelay<Config>) {
         self.service = service
         self.config  = config
 

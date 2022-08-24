@@ -8,12 +8,13 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol ItemDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
 
-    var config: Variable<Config> { get }
+    var config: BehaviorRelay<Config> { get }
     var service: ToDoServiceProtocol { get }
 }
 
@@ -21,7 +22,7 @@ final class ItemComponent: Component<ItemDependency> {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 
-    var config: Variable<Config> {
+    var config: BehaviorRelay<Config> {
         return dependency.config
     }
 

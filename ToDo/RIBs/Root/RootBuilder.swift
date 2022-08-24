@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol RootDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -16,7 +17,7 @@ protocol RootDependency: Dependency {
     var application: UIApplication { get }
     var launchOptions: [UIApplication.LaunchOptionsKey: Any]? { get }
     var service: ToDoServiceProtocol { get }
-    var config: Variable<Config> { get }
+    var config: BehaviorRelay<Config> { get }
 }
 
 final class RootComponent: Component<RootDependency> {
@@ -32,7 +33,7 @@ final class RootComponent: Component<RootDependency> {
         return dependency.launchOptions
     }
 
-    var config: Variable<Config> {
+    var config: BehaviorRelay<Config> {
         return dependency.config
     }
 

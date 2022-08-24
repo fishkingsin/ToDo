@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol DrawerInteractable: Interactable, MenuListener, ListListener {
 

@@ -8,13 +8,13 @@
 
 import RIBs
 import RxSwift
-
+import RxCocoa
 protocol MenuDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
 
     var service: ToDoServiceProtocol { get }
-    var config: Variable<Config> { get }
+    var config: BehaviorRelay<Config> { get }
 }
 
 final class MenuComponent: Component<MenuDependency> {
@@ -25,7 +25,7 @@ final class MenuComponent: Component<MenuDependency> {
         return dependency.service
     }
 
-    var config: Variable<Config> {
+    var config: BehaviorRelay<Config> {
         return dependency.config
     }
 }

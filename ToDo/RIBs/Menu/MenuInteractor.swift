@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 import Eureka
 
 protocol MenuRouting: ViewableRouting {
@@ -33,11 +34,11 @@ final class MenuInteractor: PresentableInteractor<MenuPresentable>, MenuInteract
     weak var listener: MenuListener?
 
     private let service: ToDoServiceProtocol
-    private let config: Variable<Config>
+    private let config: BehaviorRelay<Config>
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: MenuPresentable, service: ToDoServiceProtocol, config: Variable<Config>) {
+    init(presenter: MenuPresentable, service: ToDoServiceProtocol, config: BehaviorRelay<Config>) {
         self.service = service
         self.config  = config
         

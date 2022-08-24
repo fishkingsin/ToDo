@@ -8,12 +8,13 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol LoggedInDependency: Dependency {
     var loggedInViewController: LoggedInViewControllable { get }
     
     var service: ToDoServiceProtocol { get }
-    var config: Variable<Config> { get }
+    var config: BehaviorRelay<Config> { get }
 }
 
 final class LoggedInComponent: Component<LoggedInDependency> {
@@ -27,7 +28,7 @@ final class LoggedInComponent: Component<LoggedInDependency> {
         return dependency.service
     }
 
-    var config: Variable<Config> {
+    var config: BehaviorRelay<Config> {
         return dependency.config
     }
 

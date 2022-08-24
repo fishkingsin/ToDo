@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         launchRouter = rib.launchRouter
         urlHandler   = rib.urlHandler
 
-        launchRouter?.launchFromWindow(window)
+        launchRouter?.launch(from: window)
 
         return true
     }

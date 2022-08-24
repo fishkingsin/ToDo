@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol LoggedInInteractable: Interactable, DrawerListener {
     var router: LoggedInRouting? { get set }

@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol LoggedOutRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -33,11 +34,11 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
     weak var listener: LoggedOutListener?
 
     private let service: ToDoServiceProtocol
-    private let config: Variable<Config>
+    private let config: BehaviorRelay<Config>
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: LoggedOutPresentable, service: ToDoServiceProtocol, config: Variable<Config>) {
+    init(presenter: LoggedOutPresentable, service: ToDoServiceProtocol, config: BehaviorRelay<Config>) {
         self.service = service
         self.config  = config
 

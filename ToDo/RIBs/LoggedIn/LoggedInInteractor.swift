@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol LoggedInRouting: Routing {
     func cleanupViews()

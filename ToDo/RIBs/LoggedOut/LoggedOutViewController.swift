@@ -9,6 +9,7 @@
 import RIBs
 import RxCocoa
 import RxSwift
+import RxCocoa
 import UIKit
 import TransitionButton
 import SVProgressHUD
@@ -32,7 +33,7 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         super.viewDidLoad()
         
         loginButton.rx.tap
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 guard let this = self else { return }
 

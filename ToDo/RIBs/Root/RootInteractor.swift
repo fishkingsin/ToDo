@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol RootRouting: ViewableRouting {
     func routeToLoggedIn(sessionToken: String) -> LoggedInActionableItem

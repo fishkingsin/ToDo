@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol ItemRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -36,13 +37,13 @@ final class ItemInteractor: PresentableInteractor<ItemPresentable>, ItemInteract
 
     private let item: ItemViewModel
     private let service: ToDoServiceProtocol
-    private let config: Variable<Config>
+    private let config: BehaviorRelay<Config>
     private var newDetails: String
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     init(presenter: ItemPresentable, item: ItemViewModel,
-         service: ToDoServiceProtocol, config: Variable<Config>) {
+         service: ToDoServiceProtocol, config: BehaviorRelay<Config>) {
 
         self.item       = item
         self.config     = config

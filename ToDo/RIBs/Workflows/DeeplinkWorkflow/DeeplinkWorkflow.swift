@@ -8,6 +8,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 public class DeeplinkWorkflow: Workflow<RootActionableItem> {
     enum FlowType {

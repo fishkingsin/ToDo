@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public protocol DrawerActionableItem: class {
     func waitForList() -> Observable<(ListActionableItem, ())>

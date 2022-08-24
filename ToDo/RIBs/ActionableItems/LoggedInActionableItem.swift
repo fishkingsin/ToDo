@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public protocol LoggedInActionableItem: class {
     func waitForDrawer() -> Observable<(DrawerActionableItem, ())>
