@@ -31,7 +31,8 @@ DEPENDENCIES:
   - RealmSwift
   - REFrostedViewController
   - RIBs (from `../../../`)
-  - RxCocoa (~> 6.0.0)
+  - RxCocoa
+  - RxSwift
   - SnapKit (~> 5.6.0)
   - SVProgressHUD
   - TransitionButton
@@ -72,6 +73,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
 
-PODFILE CHECKSUM: 4c1790c1b08b0c45e30eefdf79659f66bc5eb377
+PODFILE CHECKSUM: f2f9cf53d6dedf641266e566b286e84b4c3db5a9
 
 COCOAPODS: 1.11.3
